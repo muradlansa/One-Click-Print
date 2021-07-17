@@ -1,0 +1,67 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "app": {
+    "background": {
+      "scripts": ["main.js","tcp-client.js"]
+    }
+
+  },
+
+
+
+
+
+  "manifest_version": 2,
+  "name": "One Click Printer",
+  "key":
+  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAly9frvT3b3mzQTM339ZmKD3Am+cRzBk3cnRBH5D/k7M2Ue0rRSZD8LL0fl1Xb7dbHRJdElLndRSBS6TTzBmp1npXoSEvLJWvrZZsUz55RvHcU994GHgyfGs5BsAPb7S1batmINhHKh/b5jw4Im7IQgl0i+NKdzQuRUe3/yf7Rz6lZLoMhtw2iGMuMFAZ/U9g7zcCJLDu8j+GwAUwl928sCBJU5c2MuERMklz7XiTZkYB6FgzxM56GMFDHavS5kuVpwt7ihDFU1i19I774z62/4OxWDFmHjRLD8gGS428ojCCkU4o8P3s0uiTdp4YjBFIcB3o1O1WvmYAn5zjC5JCWwIDAQAB",
+  
+  "version": "1.0",
+  "author": [ {
+    "name": "Murad Lansa",
+    "email": "mail@muradlansa.com"
+   } ],
+  "description": "Bridge for connecting webapp to Thermal Printer",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "minimum_chrome_version": "25",
+  "externally_connectable": {
+    "matches": ["*://localhost:*/*","*://zanzibarcargo.com:*/*" ]
+  },
+  "sockets": {
+    "tcp": {
+      "connect": "*:*"
+    }
+  },
+
+
+  "usb_printers":{
+
+    "filters":[
+    
+      {
+    
+        "vendorId": 19267
+    
+      }
+    
+     ]
+    },
+
+  "permissions": ["usb", "serial", "storage"],
+  "optional_permissions": [
+    {"usbDevices": [
+        {"vendorId": 1046, "productId": 20497},
+        {"vendorId": 1659, "productId": 8965},
+        {"vendorId": 1208, "productId": 3587},
+        {"vendorId": 1352, "productId": 2056},
+        {"vendorId": 19267, "productId": 14384},
+
+        {"vendorId": 1137, "productId": 85},
+        {"vendorId": 57359, "productId": 1161},
+        {"vendorId": 19267, "productId": 14384},
+        {"vendorId": 5380, "productId": 26}]
+    }]
+}
